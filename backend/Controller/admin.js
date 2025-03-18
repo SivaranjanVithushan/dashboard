@@ -9,6 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "default_secret"; // Use environmen
 exports.registerAdmin = async (req, res) => {
   try {
     const { Name, Email, Password } = req.body;
+    console.log(req.body);
 
     // Check if the admin already exists
     const existingAdmin = await Admin.findOne({ Email });

@@ -2,6 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 var bodyParser = require('body-parser')
+const cors = require("cors");
+
+app.use(cors({
+  origin: "http://localhost:3000", // Allow requests from React
+  credentials: true, // Allow cookies & authorization headers
+}));
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
